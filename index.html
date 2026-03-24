@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Ngaara Boutique | Timeless Elegance</title>
+  <!-- Google Fonts & simple CSS reset -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="header">
+  <h1 class="logo">Ng'aara</h1>
+  <input type="text" placeholder="Search collections..." class="search">
+  
+  <button class="hamburger" id="hamburger">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+  
+  <nav id="navMenu" class="nav-menu">
+    <a href="index.html">Home</a>
+    <a href="products.html">Products</a>
+    <a href="about.html">About</a>
+  </nav>
+</header>
+
+<!-- HERO CAROUSEL (full width smooth) -->
+<section class="hero">
+  <div class="hero-carousel" id="heroCarousel">
+    <img src="images/elegantly-dressed-woman-afro-hair-600nw-2614633377.webp" class="active" alt="elegant style">
+    <img src="images/aw-24-lookbook-7-mob.jpg" alt="modern fashion">
+    <img src="images/il_fullxfull.2105739985_1bc7.avif" alt="luxury collection">
+    <img src="images/9e9eacc9793c69b41672ec9591fd1919.jpg" alt="timeless design">
+    <img src="images/istockphoto-1288657470-612x612.jpg" alt="autumn vibes">
+  </div>
+  <div class="overlay"></div>
+  <div class="hero-text">
+    <h2>Elevate Your Style</h2>
+    <p>Discover timeless fashion made for you</p>
+  </div>
+</section>
+
+<!-- PRODUCT CARDS SECTION -->
+<section class="cards">
+  <!-- HANDBAGS -->
+  <div class="card">
+    <div class="carousel" id="carouselHandbags">
+      <img src="images/1.jpg" class="active" alt="handbag 1">
+      <img src="images/IMG-20250203-WA0520.webp" alt="handbag 2">
+      <img src="images/hand.jpg" alt="handbag 3">
+    </div>
+    <div class="content">
+      <h2>Stylish Handbags</h2>
+      <p>Discover the perfect blend of elegance and functionality with our collection of stylish handbags</p>
+      <a href="handbag.html" class="btn">Shop Now</a>
+    </div>
+  </div>
+
+  <!-- SHOES (reverse layout) -->
+  <div class="card reverse">
+    <div class="carousel" id="carouselShoes">
+      <img src="images/CT972RD-3.jpg" class="active" alt="shoe 1">
+      <img src="images/CT1010C-3.jpg" alt="shoe 2">
+      <img src="images/7.jpg" alt="shoe 3">
+    </div>
+    <div class="content">
+      <h2>Trendy Shoes</h2>
+      <p>Step into confidence with our collection of stylish shoes designed for every occasion</p>
+      <a href="shoes.html" class="btn">Shop Now</a>
+    </div>
+  </div>
+
+  <!-- DRESSES -->
+  <div class="card">
+    <div class="carousel" id="carouselDresses">
+      <img src="images/O1CN01VXDyEz2FfSMxao3s4__2246938907.webp" class="active" alt="dress 1">
+      <img src="images/anastriana-red-ES-1.jpg" alt="dress 2">
+      <img src="images/dr.jpg" alt="dress 3">
+    </div>
+    <div class="content">
+      <h2>Elegant Dresses</h2>
+      <p>Discover our stunning collection of dresses designed to make you look and feel your best.</p>
+      <a href="dresses.html" class="btn">Shop Now</a>
+    </div>
+  </div>
+
+  <!-- NECKLACES reverse -->
+  <div class="card reverse">
+    <div class="carousel" id="carouselNecklaces">
+      <img src="images/61xUQIASFkL._AC_UY1100_.jpg" class="active" alt="necklace 1">
+      <img src="images/neck.jpg" alt="necklace 2">
+      <img src="images/neck2.webp" alt="necklace 3">
+    </div>
+    <div class="content">
+      <h2>Beautiful Necklaces</h2>
+      <p>Add a touch of elegance to your look with our beautifully crafted necklaces.</p>
+      <a href="necklaces.html" class="btn">Shop Now</a>
+    </div>
+  </div>
+</section>
+
+<!-- NEWSLETTER -->
+<section class="newsletter">
+  <div class="newsletter-card">
+    <div class="form">
+      <input type="text" placeholder="Your name" id="subName">
+      <input type="email" placeholder="Email address" id="subEmail">
+      <button id="subscribeBtn">Subscribe</button>
+    </div>
+    <div class="text">
+      <h2>Subscribe to Newsletter</h2>
+      <p>Get exclusive offers, new arrivals, and style updates.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>© 2025 Ng'aara Boutique — Timeless elegance, curated for you.</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

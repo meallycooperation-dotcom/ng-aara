@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Product Detail - Ng'aara Boutique</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Supabase CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+
+  <link rel="stylesheet" href="productdetail.css">
+</head>
+<body>
+
+<header class="header">
+  <h1>Ng'aara</h1>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="products.html">Products</a>
+    <a href="about.html">About</a>
+  </nav>
+</header>
+
+<!-- BREADCRUMBS -->
+<section class="breadcrumbs">
+  <div class="breadcrumb-container">
+    <a href="index.html">Home</a>
+    <span class="separator">/</span>
+    <a href="products.html">Products</a>
+    <span class="separator">/</span>
+    <span id="productNameBreadcrumb" class="current">Product</span>
+  </div>
+</section>
+
+<section class="product-detail" id="productDetail">
+  <!-- Product details will load here -->
+</section>
+
+<script src="productdetail.js"></script>
+</body>
+</html>
