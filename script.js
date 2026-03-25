@@ -178,24 +178,79 @@
       }
     });
 
-    // NEWSLETTER subscription interactive alert (polite feedback)
+    // NEWSLETTER subscription: sanitize and insert into Supabase newsletter table
+    const sanitizeText = (value) => value ? value.replace(/[<>]/g, '').trim() : '';
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    const SUPABASE_URL = window.NGAARA_SUPABASE_URL = "https://vbabbuqataokwffacmam.supabase.co";
+    const SUPABASE_ANON_KEY = window.NGAARA_SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZiYWJidXFhdGFva3dmZmFjbWFtIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzQyMTUxNDIsImV4cCI6MjA4OTc5MTE0Mn0.59-aGoxBI39iInaq_cG2ZbCz_oXqbtKpFepk_LBmdPs";
+
+    const insertToSupabase = async ({ name, email }) => {
+      if (!SUPABASE_URL || !SUPABASE_ANON_KEY) {
+        throw new Error('Supabase config missing');
+      }
+
+      const response = await fetch(`${SUPABASE_URL.replace(/\/$/, '')}/rest/v1/newsletter`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'apikey': SUPABASE_ANON_KEY,
+          'Authorization': `Bearer ${SUPABASE_ANON_KEY}`,
+          'Prefer': 'return=minimal'
+        },
+        body: JSON.stringify({ name, email })
+      });
+
+      if (!response.ok) {
+        if (response.status === 409) {
+          throw new Error('duplicate');
+        }
+        const message = await response.text().catch(() => response.statusText);
+        throw new Error(message || 'Subscription failed');
+      }
+    };
+
     const subscribeButton = document.getElementById('subscribeBtn');
     if(subscribeButton) {
-      subscribeButton.addEventListener('click', (e) => {
+      subscribeButton.addEventListener('click', async (e) => {
         e.preventDefault();
         const nameInput = document.getElementById('subName');
         const emailInput = document.getElementById('subEmail');
-        const name = nameInput ? nameInput.value.trim() : '';
-        const email = emailInput ? emailInput.value.trim() : '';
+        const name = sanitizeText(nameInput ? nameInput.value : '');
+        const email = (emailInput ? emailInput.value : '').trim().toLowerCase();
 
-        if(!name && !email) {
-          alert("✨ Please enter your name and email to receive style updates.");
-        } else if(!email) {
-          alert("📧 Kindly provide your email address.");
-        } else if(!email.includes('@') || !email.includes('.')) {
-          alert("Please enter a valid email address.");
-        } else {
-          alert(`🎉 Thank you ${name || 'dear fashionista'}! You're now subscribed to Ngaara newsletter.`);
+        if (!name) {
+          alert('Please provide your name.');
+          nameInput?.focus();
+          return;
+        }
+
+        if (!email) {
+          alert('Kindly provide your email address.');
+          emailInput?.focus();
+          return;
+        }
+
+        if (!emailPattern.test(email)) {
+          alert('Please enter a valid email address.');
+          emailInput?.focus();
+          return;
+        }
+
+        try {
+          await insertToSupabase({ name, email });
+          alert(`${name}, you're now on the mailing list.`);
+        } catch (err) {
+          if (err?.message === 'duplicate') {
+            alert('You already receive styling updates from us — thank you!');
+          } else if (err?.message === 'Supabase config missing') {
+            alert('Newsletter is temporarily unavailable. Please try again later.');
+            console.warn(err);
+          } else {
+            console.error('newsletter error', err);
+            alert('Something went wrong, please try again shortly.');
+          }
+        } finally {
           if(nameInput) nameInput.value = '';
           if(emailInput) emailInput.value = '';
         }
