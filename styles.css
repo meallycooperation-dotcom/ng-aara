@@ -403,6 +403,95 @@
       }
     }
 
+    /* CONTACT SECTION */
+    .contact {
+      padding: 4rem 5%;
+      background: #fff;
+      border-top: 1px solid #efe2d9;
+    }
+
+    .contact-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .contact-inner h2 {
+      font-size: 2.25rem;
+      color: #2c2a29;
+      letter-spacing: -0.01em;
+    }
+
+    .contact-inner p {
+      color: #7b6c62;
+      max-width: 640px;
+      margin: 0 auto;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      width: 100%;
+    }
+
+    .contact-card {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+      background: #fdf9f4;
+      border-radius: 18px;
+      padding: 1.75rem;
+      border: 1px solid #f0e2d6;
+      text-decoration: none;
+      color: inherit;
+      box-shadow: 0 18px 30px -20px rgba(0,0,0,0.5);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .contact-card h3 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #c47b5e;
+    }
+
+    .contact-card p {
+      font-size: 1.35rem;
+      font-weight: 600;
+      color: #2c2a29;
+    }
+
+    .contact-card span {
+      color: #5c534e;
+      font-size: 0.9rem;
+    }
+
+    .contact-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 24px 40px -30px rgba(0,0,0,0.5);
+    }
+
+    .contact-card button {
+      margin-top: 0.4rem;
+      align-self: flex-start;
+      border: none;
+      padding: 0.5rem 1.6rem;
+      border-radius: 999px;
+      background: linear-gradient(135deg, #c47b5e, #9b4b2e);
+      color: white;
+      font-weight: 600;
+      cursor: pointer;
+      transition: transform 0.2s ease;
+      font-family: inherit;
+    }
+
+    .contact-card button:hover {
+      transform: translateY(-2px);
+    }
+
     /* NEWSLETTER SECTION - elegant */
     .newsletter {
       background: linear-gradient(112deg, #f6ede8 0%, #fefaf5 100%);
