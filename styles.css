@@ -29,14 +29,19 @@
     }
 
     .logo {
-      font-size: 1.8rem;
-      font-weight: 600;
-      letter-spacing: -0.5px;
-      background: linear-gradient(135deg, #c47b5e, #9b4b2e);
+      font-family: 'Great Vibes', cursive;
+      font-size: 3rem;
+      font-weight: 400;
+      letter-spacing: -0.05em;
+      line-height: 1;
+      background: linear-gradient(135deg, #f9e1a0 0%, #d9aa4f 40%, #b88123 75%, #f4e2af 100%);
       background-clip: text;
       -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
       color: transparent;
+      text-shadow: 0 4px 18px rgba(0, 0, 0, 0.22), 0 0 18px rgba(255, 235, 170, 0.35);
       cursor: default;
+      user-select: none;
     }
 
     .search {
@@ -480,16 +485,18 @@
       border: none;
       padding: 0.5rem 1.6rem;
       border-radius: 999px;
-      background: linear-gradient(135deg, #c47b5e, #9b4b2e);
+      background: linear-gradient(135deg, #f9e1a0 0%, #d9aa4f 40%, #b88123 75%, #f4e2af 100%);
       color: white;
       font-weight: 600;
       cursor: pointer;
-      transition: transform 0.2s ease;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      box-shadow: 0 10px 20px rgba(184, 128, 35, 0.18);
       font-family: inherit;
     }
 
     .contact-card button:hover {
-      transform: translateY(-2px);
+      transform: translateY(-2px) scale(1.01);
+      box-shadow: 0 14px 26px rgba(184, 128, 35, 0.24);
     }
 
     /* NEWSLETTER SECTION - elegant */
@@ -539,21 +546,22 @@
     }
 
     .form button {
-      background: #c47b5e;
+      background: linear-gradient(135deg, #f9e1a0 0%, #d9aa4f 40%, #b88123 75%, #f4e2af 100%);
       border: none;
       padding: 0 2rem;
       border-radius: 60px;
       font-weight: 600;
       color: white;
       cursor: pointer;
-      transition: 0.2s;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
       font-family: inherit;
       font-size: 0.95rem;
+      box-shadow: 0 12px 24px rgba(184, 128, 35, 0.18);
     }
 
     .form button:hover {
-      background: #9b4b2e;
       transform: scale(1.02);
+      box-shadow: 0 16px 28px rgba(184, 128, 35, 0.24);
     }
 
     .text {

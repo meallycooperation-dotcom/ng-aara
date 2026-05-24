@@ -17,8 +17,18 @@ body {
 }
 
 .logo {
-  font-size: 24px;
-  font-weight: 700;
+  font-family: 'Great Vibes', cursive;
+  font-size: 3rem;
+  font-weight: 400;
+  letter-spacing: -0.05em;
+  line-height: 1;
+  background: linear-gradient(135deg, #f9e1a0 0%, #d9aa4f 40%, #b88123 75%, #f4e2af 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  text-shadow: 0 4px 18px rgba(0, 0, 0, 0.22), 0 0 18px rgba(255, 235, 170, 0.35);
+  cursor: default;
 }
 
 .search {
